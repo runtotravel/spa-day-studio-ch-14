@@ -5,9 +5,10 @@
 </head>
 <body>
     <form method="post" action="/user">
-        <label>Username: <input type="text" name="username" id="username" /></label>
+        <p th:text="${error}" th:if="${error != null}" style="color: red;"></p>
+        <label>Username: <input type="text" name="username" id="username" th:value="${username}" /></label>
         <br>
-        <label>Email: <input type="email" name="email" id="email" /></label>
+        <label>Email: <input type="email" name="email" id="email" th:value="${email}"/></label>
         <br>
         <label>Password: <input type="password" name="password" id="password" /></label>
         <br>

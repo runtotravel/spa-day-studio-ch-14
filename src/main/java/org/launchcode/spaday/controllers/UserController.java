@@ -25,6 +25,10 @@ public class UserController {
        if (user.getPassword().equals(verify)) {
            return "user/index";
        } else {
+           model.addAttribute("error", "Make sure your passwords match!");
+           model.addAttribute("username", user.getUsername());
+           model.addAttribute("email", user.getEmail());
+
            return "user/add";
        }
     }
